@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "254926948073",
+    "project_id": "realhome-app",
+    "storage_bucket": "realhome-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:254926948073:android:acdb0588eb92bcf04b9278",
+        "android_client_info": {
+          "package_name": "com.example.firstapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "254926948073-2ebnltcjplvhvrpenrulupb0j836a46b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.firstapp",
+            "certificate_hash": "b7d721cb12088ed5c39147a787bd23f366fb24a6"
+          }
+        },
+        {
+          "client_id": "254926948073-vuoe48b3irlv49u24jqtsrkdovv8pon7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrPJF8olMv8OlCgXTF9-F37U-rjt-8KIM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "254926948073-vuoe48b3irlv49u24jqtsrkdovv8pon7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
