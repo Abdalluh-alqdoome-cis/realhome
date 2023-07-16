@@ -6,6 +6,7 @@ const List<String> list = <String>[
   'RENT',
 ];
 
+// ignore: camel_case_types
 class dropdown2 extends StatefulWidget {
   const dropdown2({super.key});
 
@@ -13,6 +14,7 @@ class dropdown2 extends StatefulWidget {
   State<dropdown2> createState() => _dropdown2State();
 }
 
+// ignore: camel_case_types
 class _dropdown2State extends State<dropdown2> {
   String dropdown2Value = list.first;
 

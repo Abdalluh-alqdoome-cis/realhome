@@ -1,10 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firstapp/country.dart';
+//import 'package:firstapp/country.dart';
 import 'package:flutter/material.dart';
 
 import 'package:firstapp/componnant/topstatic.dart';
 
-import '../../componnant/lestmune.dart';
+//import '../../componnant/lestmune.dart';
 import '../../componnant/lestsale.dart';
 import '../renthouse/rent1.dart';
 
@@ -22,6 +22,7 @@ const List<String> _countries = [
   'Balqa'
 ];
 
+// ignore: camel_case_types
 class maibay extends StatefulWidget {
   const maibay({Key? key}) : super(key: key);
 
@@ -29,6 +30,7 @@ class maibay extends StatefulWidget {
   State<maibay> createState() => _maibayState();
 }
 
+// ignore: camel_case_types
 class _maibayState extends State<maibay> {
   //String dropdownCityValue = _countries.first;
   String? dropdownCityValue; // = _countries.first;
@@ -47,10 +49,10 @@ class _maibayState extends State<maibay> {
           actions: [
             DropdownButton<String>(
               value: dropdownCityValue,
-              icon: Icon(Icons.location_on, color: Colors.red),
+              icon: const Icon(Icons.location_on, color: Colors.red),
               iconSize: 24,
               //elevation: 16,
-              style: TextStyle(color: Colors.black, fontSize: 16),
+              style: const TextStyle(color: Colors.black, fontSize: 16),
               underline: Container(
                 height: 1,
                 color: Colors.grey[300],
@@ -80,13 +82,13 @@ class _maibayState extends State<maibay> {
                 stream: readSaleHouse(),
                 builder: (context, snapshot) {
                   if (!snapshot.hasData) {
-                    return Offstage();
+                    return const Offstage();
                   } else {
                     return SizedBox(
                         child: ListView.builder(
                       shrinkWrap: true,
                       scrollDirection: Axis.vertical,
-                      physics: ScrollPhysics(),
+                      physics: const ScrollPhysics(),
                       itemCount: snapshot.data!.docs.length,
                       itemBuilder: (context, index) {
                         DocumentSnapshot documentSnapshot =

@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 
 class FQA extends StatelessWidget {
@@ -6,8 +8,8 @@ class FQA extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Text("most common questions")),
-        body: SingleChildScrollView(
+        appBar: AppBar(title: const Text("most common questions")),
+        body: const SingleChildScrollView(
           scrollDirection: Axis.vertical,
           child: Column(
             children: [
@@ -17,7 +19,7 @@ class FQA extends StatelessWidget {
                   'All homes displayed during the application are constantly monitored and updated',
                   style: TextStyle(
                       fontSize: 18, fontWeight: FontWeight.w400, height: 1.5)),
-              const Divider(
+              Divider(
                 height: 15,
                 thickness: 3,
                 indent: 50,
@@ -30,7 +32,7 @@ class FQA extends StatelessWidget {
                   'How many people have viewed the house? How many offers have there been? ',
                   style: TextStyle(
                       fontSize: 20, fontWeight: FontWeight.w400, height: 1.5)),
-              const Divider(
+              Divider(
                 height: 15,
                 thickness: 3,
                 indent: 50,
@@ -43,7 +45,7 @@ class FQA extends StatelessWidget {
                   'This is vitally important. The owner might just be moving to a different area or a bigger property,',
                   style: TextStyle(
                       fontSize: 20, fontWeight: FontWeight.w400, height: 1.5)),
-              const Divider(
+              Divider(
                 height: 15,
                 thickness: 3,
                 indent: 50,
@@ -59,7 +61,7 @@ class FQA extends StatelessWidget {
                 style: TextStyle(
                     fontSize: 20, fontWeight: FontWeight.w400, height: 1.5),
               ),
-              const Divider(
+              Divider(
                 height: 15,
                 thickness: 3,
                 indent: 50,

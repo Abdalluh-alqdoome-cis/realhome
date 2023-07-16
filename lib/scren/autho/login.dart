@@ -1,11 +1,12 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firstapp/componnant/btn.dart';
+//import 'package:firstapp/componnant/btn.dart';
 import 'package:firstapp/componnant/topstatic.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../componnant/textfild.dart';
 
+// ignore: camel_case_types
 class login extends StatefulWidget {
   const login({Key? key}) : super(key: key);
 
@@ -13,6 +14,7 @@ class login extends StatefulWidget {
   State<login> createState() => _loginState();
 }
 
+// ignore: camel_case_types
 class _loginState extends State<login> {
   // declaration form
   var formKey = GlobalKey<FormState>();
@@ -38,17 +40,17 @@ class _loginState extends State<login> {
                   color: backcolor,
                   child: Column(children: [
                     Container(
-                      margin: EdgeInsets.symmetric(vertical: 30),
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 80, vertical: 10),
-                      decoration: BoxDecoration(
+                      margin: const EdgeInsets.symmetric(vertical: 30),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 80, vertical: 10),
+                      decoration: const BoxDecoration(
                           color: maincolor,
                           borderRadius: BorderRadius.only(
                               bottomLeft: Radius.circular(50),
                               bottomRight: Radius.circular(50))),
                       height: 125,
                       width: double.infinity,
-                      child: Text(
+                      child: const Text(
                         'log in to continue!',
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
@@ -58,7 +60,7 @@ class _loginState extends State<login> {
                       ),
                     ),
                     Container(
-                        margin: EdgeInsets.symmetric(vertical: 50),
+                        margin: const EdgeInsets.symmetric(vertical: 50),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
@@ -91,8 +93,8 @@ class _loginState extends State<login> {
                               maxLength: 25,
                             ),
                             Container(
-                              margin: EdgeInsets.symmetric(vertical: 10),
-                              padding: EdgeInsets.symmetric(
+                              margin: const EdgeInsets.symmetric(vertical: 10),
+                              padding: const EdgeInsets.symmetric(
                                   horizontal: 20, vertical: 10),
                               width: size.width * 0.8,
                               decoration: BoxDecoration(
@@ -127,11 +129,13 @@ class _loginState extends State<login> {
                                                       .trim())
                                               .get();
 
-                                      bool IsExists = loginData.docs.length > 0
+                                      // ignore: non_constant_identifier_names
+                                      bool IsExists = loginData.docs.isNotEmpty
                                           ? true
                                           : false;
 
                                       if (!IsExists) {
+                                        // ignore: use_build_context_synchronously
                                         ScaffoldMessenger.of(context)
                                             .showSnackBar(
                                           const SnackBar(
@@ -142,17 +146,17 @@ class _loginState extends State<login> {
                                         return;
                                       }
 
-
                                       final SharedPreferences prefs =
                                           await SharedPreferences.getInstance();
                                       await prefs.setString('UserName',
                                           loginData.docs[0].data()["UserName"]);
                                       await prefs.setString('EmailAddress',
                                           loginData.docs[0].data()["Email"]);
+                                      // ignore: use_build_context_synchronously
                                       Navigator.of(context).pushNamed('home');
                                     }
                                   },
-                                  child: Text('login',
+                                  child: const Text('login',
                                       style: TextStyle(
                                         color: maincolor2,
                                       ))),
@@ -165,7 +169,7 @@ class _loginState extends State<login> {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Text(
+                                const Text(
                                   'dont have an acount ?',
                                   style: TextStyle(color: skne),
                                 ),
@@ -173,7 +177,7 @@ class _loginState extends State<login> {
                                   onDoubleTap: () {
                                     Navigator.of(context).pushNamed('signup');
                                   },
-                                  child: Text(
+                                  child: const Text(
                                     'sign up',
                                     style: TextStyle(
                                         color: maincolor,

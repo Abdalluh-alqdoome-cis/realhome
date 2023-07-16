@@ -1,9 +1,10 @@
-import 'package:firstapp/componnant/appbars.dart';
+//import 'package:firstapp/componnant/appbars.dart';
 import 'package:firstapp/componnant/btn.dart';
 import 'package:firstapp/componnant/topstatic.dart';
-import 'package:firstapp/range.dart';
+//import 'package:firstapp/range.dart';
 import 'package:flutter/material.dart';
 
+// ignore: camel_case_types
 class roles extends StatefulWidget {
   const roles({super.key});
 
@@ -11,6 +12,7 @@ class roles extends StatefulWidget {
   State<roles> createState() => _rolesState();
 }
 
+// ignore: camel_case_types
 class _rolesState extends State<roles> {
   @override
   Widget build(BuildContext context) {
@@ -18,16 +20,16 @@ class _rolesState extends State<roles> {
       home: Scaffold(
         body: Column(children: [
           Container(
-            margin: EdgeInsets.symmetric(vertical: 10),
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-            decoration: BoxDecoration(
+            margin: const EdgeInsets.symmetric(vertical: 10),
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            decoration: const BoxDecoration(
                 color: maincolor,
                 borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(50),
                     bottomRight: Radius.circular(50))),
             height: 125,
             width: double.infinity,
-            child: Column(
+            child: const Column(
               children: [
                 Text(
                   'Procedures must be\n confirmed before starting',
@@ -42,7 +44,7 @@ class _rolesState extends State<roles> {
           ),
           Text(
             '1- Upload pictures of the house or apartment only'.toUpperCase(),
-            style: TextStyle(
+            style: const TextStyle(
                 color: Colors.black87,
                 fontWeight: FontWeight.bold,
                 fontSize: 25),
@@ -57,7 +59,7 @@ class _rolesState extends State<roles> {
           Text(
             '2- Setting a specific price for the house or apartment'
                 .toUpperCase(),
-            style: TextStyle(
+            style: const TextStyle(
                 color: Colors.black87,
                 fontWeight: FontWeight.bold,
                 fontSize: 25),
@@ -71,7 +73,7 @@ class _rolesState extends State<roles> {
           ),
           Text(
             '3- Write full house details in the description'.toUpperCase(),
-            style: TextStyle(
+            style: const TextStyle(
                 color: Colors.black87,
                 fontWeight: FontWeight.bold,
                 fontSize: 25),
@@ -85,7 +87,7 @@ class _rolesState extends State<roles> {
           ),
           Text(
             '4- Use effective and correct contact information'.toUpperCase(),
-            style: TextStyle(
+            style: const TextStyle(
                 color: Colors.black87,
                 fontWeight: FontWeight.bold,
                 fontSize: 25),

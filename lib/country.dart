@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
 
+// ignore: camel_case_types
 class country extends StatefulWidget {
+  const country({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _countryState createState() => _countryState();
 }
 
+// ignore: camel_case_types
 class _countryState extends State<country> {
   //var selectedCountry;
+  // ignore: prefer_typing_uninitialized_variables
   var all;
   final List<String> _countries = [
     'Amman',
@@ -26,10 +32,12 @@ class _countryState extends State<country> {
   Widget build(BuildContext context) {
     return DropdownButton<String>(
       value: all,
-      icon: Icon(Icons.location_on, color: Colors.red),
-      iconSize: 24,
+      icon: const Icon(Icons.location_on, color: Colors.red),
+      iconSize: 32,
       //elevation: 16,
-      style: TextStyle(color: Colors.black, fontSize: 16),
+      style: const TextStyle(color: Colors.black, fontSize: 16),
+      //borderRadius: BorderRadius.all(Radius.circular(30)),
+
       underline: Container(
         height: 1,
         color: Colors.grey[300],

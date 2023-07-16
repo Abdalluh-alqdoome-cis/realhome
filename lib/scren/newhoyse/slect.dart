@@ -1,20 +1,34 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
-import 'package:firstapp/country.dart';
-import 'package:firstapp/scren/newhoyse/addimage.dart';
-import 'package:firstapp/scren/newhoyse/addtext.dart';
-import 'package:firstapp/scren/newhoyse/typeof.dart';
-import 'package:firstapp/scren/newhoyse/typesal.dart';
+//import 'package:firstapp/country.dart';
+//import 'package:firstapp/scren/newhoyse/addimage.dart';
+//import 'package:firstapp/scren/newhoyse/addtext.dart';
+//import 'package:firstapp/scren/newhoyse/typeof.dart';
+//import 'package:firstapp/scren/newhoyse/typesal.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
 import '../../badybage.dart/contactus.dart';
 import '../../componnant/topstatic.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-const List<String> listCity = ['Amman', 'Zarqa', 'Irbid', 'Aqaba', 'Maan', 'Madaba', 'Jerash', 'Mafraq', 'Karak', 'Tafilah', 'Balqa'];
+const List<String> listCity = [
+  'Amman',
+  'Zarqa',
+  'Irbid',
+  'Aqaba',
+  'Maan',
+  'Madaba',
+  'Jerash',
+  'Mafraq',
+  'Karak',
+  'Tafilah',
+  'Balqa'
+];
 const List<String> list = <String>['PARTMENT', 'HOUSE', 'FELA'];
 const List<String> list2 = <String>['SAL', 'RENT'];
 
+// ignore: camel_case_types
 class selct extends StatefulWidget {
   const selct({super.key});
 
@@ -22,6 +36,7 @@ class selct extends StatefulWidget {
   State<selct> createState() => _selctState();
 }
 
+// ignore: camel_case_types
 class _selctState extends State<selct> {
   // declaration form
   var formKey = GlobalKey<FormState>();
@@ -37,12 +52,26 @@ class _selctState extends State<selct> {
   String text1 = '';
   String text2 = '';
   String text3 = '';
+  String _emailAddress = '';
 
-  List<File> _images = [];
+  final List<File> _images = [];
   List<String> imagesUrls = [];
 
   final FirebaseStorage fstorage = FirebaseStorage.instance;
   late UploadTask uploadTask;
+
+  // ignore: non_constant_identifier_names
+  LoadPrefences() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    _emailAddress = prefs.getString('EmailAddress')!;
+    setState(() {});
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    LoadPrefences();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -53,13 +82,13 @@ class _selctState extends State<selct> {
           title: Text(
             'add house'.toUpperCase(),
           ),
-          actions: [country()],
+          //actions: [country()],
         ),
         body: Form(
           key: formKey,
           child: SingleChildScrollView(
               child: Column(children: [
-            Container(
+            SizedBox(
               height: 300,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
@@ -72,7 +101,7 @@ class _selctState extends State<selct> {
             IconButton(
                 alignment: Alignment.bottomRight,
                 onPressed: _pickImage,
-                icon: Icon(
+                icon: const Icon(
                   Icons.add_a_photo,
                 )),
             const Divider(
@@ -81,34 +110,34 @@ class _selctState extends State<selct> {
               indent: 0,
               endIndent: 100,
               color: Color.fromARGB(255, 120, 120, 120),
-
             ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    SizedBox(
-                      width: 150,
-                      child: DropdownButtonFormField<String>(
-                        value: dropdownCityValue,
-                        icon: const Icon(Icons.arrow_downward),
-                        elevation: 20,
-                        style: const TextStyle(color: maincolor),
-                        onChanged: (String? value) {
-                          // This is called when the user selects an item.
-                          setState(() {
-                            dropdownCityValue = value!;
-                          });
-                        },
-                        items: listCity.map<DropdownMenuItem<String>>((String value) {
-                          return DropdownMenuItem<String>(
-                            value: value,
-                            child: Text(value),
-                          );
-                        }).toList(),
-                      ),
-                    ),
-                  ],
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                SizedBox(
+                  width: 150,
+                  child: DropdownButtonFormField<String>(
+                    value: dropdownCityValue,
+                    icon: const Icon(Icons.arrow_downward),
+                    elevation: 20,
+                    style: const TextStyle(color: maincolor),
+                    onChanged: (String? value) {
+                      // This is called when the user selects an item.
+                      setState(() {
+                        dropdownCityValue = value!;
+                      });
+                    },
+                    items:
+                        listCity.map<DropdownMenuItem<String>>((String value) {
+                      return DropdownMenuItem<String>(
+                        value: value,
+                        child: Text(value),
+                      );
+                    }).toList(),
+                  ),
                 ),
+              ],
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
@@ -205,25 +234,25 @@ class _selctState extends State<selct> {
               endIndent: 100,
               color: Color.fromARGB(255, 120, 120, 120),
             ),
-            contactus(
-                phone: '0790970072', fphone: () {}, text: 'text', ftext: () {}),
+            contactus(phone: '962790970072', text: 'text'),
             Container(
-                margin: EdgeInsets.symmetric(vertical: 5),
-                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                margin: const EdgeInsets.symmetric(vertical: 5),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                 decoration: BoxDecoration(
                     color: maincolor, borderRadius: BorderRadius.circular(29)),
                 height: 90,
                 width: double.infinity,
                 child: Row(
                   children: [
-                    Icon(
+                    const Icon(
                       Icons.upload,
                       size: 50,
                       color: skne,
                     ),
                     TextButton(
                         onPressed: () async {
-                          if (_images.length == 0) {
+                          if (_images.isEmpty) {
                             ScaffoldMessenger.of(context).showSnackBar(
                               const SnackBar(
                                   content: Text(
@@ -241,7 +270,6 @@ class _selctState extends State<selct> {
                             );
                             return;
                           } else {
-
                             final docType = FirebaseFirestore.instance
                                 .collection("House")
                                 .doc();
@@ -254,15 +282,18 @@ class _selctState extends State<selct> {
                               'Type2': dropdown2Value,
                               'City': dropdownCityValue,
                               'Images': imagesUrls,
+                              'UserEmail': _emailAddress,
                               'Approve': 0
                             };
 
                             await docType.set(jsonData);
+                            // ignore: use_build_context_synchronously
                             ScaffoldMessenger.of(context).showSnackBar(
                               const SnackBar(
                                   content: Text('send your reqest Sucessfully',
                                       textAlign: TextAlign.center)),
                             );
+                            // ignore: use_build_context_synchronously
                             Navigator.of(context).pushNamed('home');
                           }
 
@@ -275,7 +306,7 @@ class _selctState extends State<selct> {
                                   }));
                           ScaffoldMessenger.of(context).showSnackBar(snackBar);*/
                         },
-                        child: Text('upload new house',
+                        child: const Text('upload new house',
                             style: TextStyle(color: skne, fontSize: 30)))
                   ],
                 )),
@@ -284,20 +315,21 @@ class _selctState extends State<selct> {
   }
 
   Future<void> createFirebaseImageURL(File image) async {
-    String filePath = "${_text1Controller.text.length == 0 ? "New House " : _text1Controller.text.trim() }/${image.path.split('/').last}";
+    String filePath =
+        "${_text1Controller.text.isEmpty ? "New House " : _text1Controller.text.trim()}/${image.path.split('/').last}";
     setState(() {
       uploadTask = fstorage.ref().child(filePath).putFile(image);
     });
     var imageUrl = await (await uploadTask).ref.getDownloadURL();
 
-    print(imageUrl);
+    //print(imageUrl);
     setState(() {
       imagesUrls.add(imageUrl.toString());
     });
   }
 
   void _pickImage() async {
-    if(_text1Controller.text.length > 0 ){
+    if (_text1Controller.text.isNotEmpty) {
       final picker = ImagePicker();
       final pickedFile = await picker.pickImage(source: ImageSource.gallery);
 
@@ -307,14 +339,12 @@ class _selctState extends State<selct> {
         });
         createFirebaseImageURL(File(pickedFile.path));
       }
-    }
-    else{
+    } else {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
             content: Text('select house description first',
                 textAlign: TextAlign.center)),
       );
     }
-
   }
 }

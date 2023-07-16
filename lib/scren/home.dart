@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firstapp/scren/bayhome/mainbay.dart';
-import 'package:firstapp/componnant/appbars.dart';
-import 'package:firstapp/drawer/drawer.dart';
+//import 'package:firstapp/scren/bayhome/mainbay.dart';
+//import 'package:firstapp/componnant/appbars.dart';
+//import 'package:firstapp/drawer/drawer.dart';
 import 'package:firstapp/componnant/topstatic.dart';
-import 'package:firstapp/scren/bayhome/bay1.dart';
-import 'package:firstapp/scren/bayhome/bay2.dart';
-import 'package:firstapp/scren/bayhome/bay3.dart';
+//import 'package:firstapp/scren/bayhome/bay1.dart';
+//import 'package:firstapp/scren/bayhome/bay2.dart';
+//import 'package:firstapp/scren/bayhome/bay3.dart';
 import 'package:firstapp/scren/renthouse/rent1.dart';
-import 'package:firstapp/scren/renthouse/rent2.dart';
-import 'package:firstapp/scren/renthouse/rent3.dart';
-import 'package:firstapp/scren/renthouse/mainrent.dart';
+//import 'package:firstapp/scren/renthouse/rent2.dart';
+//import 'package:firstapp/scren/renthouse/rent3.dart';
+//import 'package:firstapp/scren/renthouse/mainrent.dart';
 import '../componnant/lestsale.dart';
 
+// ignore: camel_case_types
 class home extends StatefulWidget {
   const home({Key? key}) : super(key: key);
 
@@ -20,8 +21,9 @@ class home extends StatefulWidget {
   State<home> createState() => _homeState();
 }
 
+// ignore: camel_case_types
 class _homeState extends State<home> {
-  final List<Map<String, dynamic>> _saleHouse = [];
+  //final List<Map<String, dynamic>> _saleHouse = [];
 
   @override
   Widget build(BuildContext context) {
@@ -37,9 +39,9 @@ class _homeState extends State<home> {
       body: SingleChildScrollView(
         child: Column(children: [
           Container(
-              margin: EdgeInsets.symmetric(vertical: 0),
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-              decoration: BoxDecoration(
+              margin: const EdgeInsets.symmetric(vertical: 0),
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              decoration: const BoxDecoration(
                   color: maincolor,
                   borderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(50),
@@ -49,7 +51,7 @@ class _homeState extends State<home> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Text(
+                  const Text(
                     'Found Dream House',
                     style: TextStyle(
                         fontSize: 24,
@@ -58,7 +60,7 @@ class _homeState extends State<home> {
                         color: maincolor2),
                   ),
                   IconButton(
-                    icon: Icon(
+                    icon: const Icon(
                       Icons.menu,
                       color: maincolor2,
                       size: 50,
@@ -70,9 +72,9 @@ class _homeState extends State<home> {
                 ],
               )),
           Container(
-            margin: EdgeInsets.only(top: 10, bottom: 10),
-            padding: EdgeInsets.all(10),
-            child: Text(
+            margin: const EdgeInsets.only(top: 10, bottom: 10),
+            padding: const EdgeInsets.all(10),
+            child: const Text(
               'Suggested to you',
               style: TextStyle(fontSize: 25, color: maincolor),
             ),
@@ -89,7 +91,7 @@ class _homeState extends State<home> {
               child: Row(
                 children: [
                   lestsale(
-                    imge: AssetImage('assest/images/upload.jpg'),
+                    imge: const AssetImage('assest/images/upload.jpg'),
                     location: 'upload',
                     type: 'house',
                     price: "",
@@ -102,12 +104,12 @@ class _homeState extends State<home> {
               )),
           Row(
             children: [
-              Text('Houses for sale'),
+              const Text('Houses for sale'),
               TextButton(
                   onPressed: () {
                     Navigator.of(context).pushNamed('mainbay');
                   },
-                  child: Text(
+                  child: const Text(
                     'more',
                     style: TextStyle(
                         color: maincolor,
@@ -127,14 +129,14 @@ class _homeState extends State<home> {
             stream: readSaleHouse(),
             builder: (context, snapshot) {
               if (!snapshot.hasData) {
-                return Offstage();
+                return const Offstage();
               } else {
                 return SizedBox(
                     height: 250,
                     child: ListView.builder(
                       shrinkWrap: true,
                       scrollDirection: Axis.horizontal,
-                      physics: ScrollPhysics(),
+                      physics: const ScrollPhysics(),
                       itemCount: snapshot.data!.docs.length,
                       itemBuilder: (context, index) {
                         DocumentSnapshot documentSnapshot =
@@ -143,7 +145,7 @@ class _homeState extends State<home> {
                           imge: NetworkImage(
                             documentSnapshot["Images"][0],
                           ),
-                          location: '${documentSnapshot["HouseDesc"]}',
+                          //  location: '${documentSnapshot["HouseDesc"]}',
                           type: '${documentSnapshot["Type"]}',
                           price: '${documentSnapshot["Price"]}',
                           size: size,
@@ -170,12 +172,12 @@ class _homeState extends State<home> {
           ),
           Row(
             children: [
-              Text('Houses offered for rent'),
+              const Text('Houses offered for rent'),
               TextButton(
                   onPressed: () {
                     Navigator.of(context).pushNamed('mainrent');
                   },
-                  child: Text(
+                  child: const Text(
                     'more',
                     style: TextStyle(
                         color: maincolor,
@@ -195,14 +197,14 @@ class _homeState extends State<home> {
             stream: readRentHouse(),
             builder: (context, snapshot) {
               if (!snapshot.hasData) {
-                return Offstage();
+                return const Offstage();
               } else {
                 return SizedBox(
                     height: 250,
                     child: ListView.builder(
                       shrinkWrap: true,
                       scrollDirection: Axis.horizontal,
-                      physics: ScrollPhysics(),
+                      physics: const ScrollPhysics(),
                       itemCount: snapshot.data!.docs.length,
                       itemBuilder: (context, index) {
                         DocumentSnapshot documentSnapshot =
@@ -234,7 +236,7 @@ class _homeState extends State<home> {
               }
             },
           ),
-          SingleChildScrollView(
+          const SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
                 children: [],

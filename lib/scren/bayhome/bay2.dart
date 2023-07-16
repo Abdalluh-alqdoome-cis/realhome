@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 
 import '../../componnant/topstatic.dart';
 
+// ignore: camel_case_types
 class bay2 extends StatelessWidget {
   const bay2({super.key});
 
@@ -21,15 +22,15 @@ class bay2 extends StatelessWidget {
           child: Column(
         children: [
           lesthorz(
-              img1: AssetImage('assest/images/housesal.png'),
-              img2: AssetImage('assest/images/housesal2.png'),
-              img3: AssetImage('assest/images/housesal3.png'),
-              img4: AssetImage('assest/images/housesal4.png'),
-              img5: AssetImage('assest/images/housesal5.png'),
-              img6: AssetImage('assest/images/housesal6.png'),
-              img7: AssetImage('assest/images/housesal7.png'),
-              img8: AssetImage('assest/images/180.png'),
-              img9: AssetImage('assest/images/180.png')),
+              img1: const AssetImage('assest/images/housesal.png'),
+              img2: const AssetImage('assest/images/housesal2.png'),
+              img3: const AssetImage('assest/images/housesal3.png'),
+              img4: const AssetImage('assest/images/housesal4.png'),
+              img5: const AssetImage('assest/images/housesal5.png'),
+              img6: const AssetImage('assest/images/housesal6.png'),
+              img7: const AssetImage('assest/images/housesal7.png'),
+              img8: const AssetImage('assest/images/180.png'),
+              img9: const AssetImage('assest/images/180.png')),
           const Divider(
             height: 0,
             thickness: 3,
@@ -50,8 +51,7 @@ class bay2 extends StatelessWidget {
             endIndent: 50,
             color: Colors.black,
           ),
-          contactus(
-              phone: '0790970072', fphone: () {}, text: 'loay', ftext: () {})
+          contactus(phone: '962790970072', text: 'message')
         ],
       )),
     );

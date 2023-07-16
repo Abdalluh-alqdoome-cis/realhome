@@ -1,6 +1,7 @@
 import 'package:firstapp/componnant/btn.dart';
 import 'package:flutter/material.dart';
 
+// ignore: camel_case_types
 class help extends StatefulWidget {
   const help({super.key});
 
@@ -8,15 +9,16 @@ class help extends StatefulWidget {
   State<help> createState() => _helpState();
 }
 
+// ignore: camel_case_types
 class _helpState extends State<help> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("help you"),
+          title: const Text("help you"),
         ),
         body: Container(
-          margin: EdgeInsets.only(top: 30, left: 35),
+          margin: const EdgeInsets.only(top: 30, left: 35),
           child: Column(children: [
             mainbtn(
               text: (' change Password'),

@@ -1,14 +1,24 @@
 import 'package:flutter/material.dart';
 
+// ignore: camel_case_types, must_be_immutable
 class lesthorz extends StatelessWidget {
+  // ignore: prefer_typing_uninitialized_variables
   var img1;
+  // ignore: prefer_typing_uninitialized_variables
   var img2;
+  // ignore: prefer_typing_uninitialized_variables
   var img3;
+  // ignore: prefer_typing_uninitialized_variables
   var img4;
+  // ignore: prefer_typing_uninitialized_variables
   var img5;
+  // ignore: prefer_typing_uninitialized_variables
   var img6;
+  // ignore: prefer_typing_uninitialized_variables
   var img7;
+  // ignore: prefer_typing_uninitialized_variables
   var img8;
+  // ignore: prefer_typing_uninitialized_variables
   var img9;
   lesthorz({
     Key? key,
@@ -25,7 +35,7 @@ class lesthorz extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 300,
       child: ListView(scrollDirection: Axis.horizontal, children: [
         Image(image: img1),

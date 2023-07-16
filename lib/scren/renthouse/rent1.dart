@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 
 import '../../badybage.dart/contactus.dart';
 import '../../badybage.dart/deccipbox1.dart';
-import '../../badybage.dart/lasthor.dart';
-import '../../componnant/lestsale.dart';
+//import '../../badybage.dart/lasthor.dart';
+//import '../../componnant/lestsale.dart';
 import '../../componnant/topstatic.dart';
 
+// ignore: camel_case_types
 class rent1 extends StatefulWidget {
   final List<dynamic> images;
   final String location;
@@ -13,14 +14,21 @@ class rent1 extends StatefulWidget {
   final String price;
   final String type;
 
-  const rent1({Key? key,required this.images, required this.location,required this.name,required this.price,required this.type}) : super(key: key);
+  const rent1(
+      {Key? key,
+      required this.images,
+      required this.location,
+      required this.name,
+      required this.price,
+      required this.type})
+      : super(key: key);
 
   @override
   State<rent1> createState() => _rent1State();
 }
 
+// ignore: camel_case_types
 class _rent1State extends State<rent1> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,28 +40,26 @@ class _rent1State extends State<rent1> {
       ),
       body: SingleChildScrollView(
           child: Column(
-            children: [
-              SizedBox(
+        children: [
+          SizedBox(
               height: 250,
               child: ListView.builder(
                 shrinkWrap: true,
                 scrollDirection: Axis.horizontal,
-                physics: ScrollPhysics(),
+                physics: const ScrollPhysics(),
                 itemCount: widget.images.length,
-                itemBuilder: (context,index){
+                itemBuilder: (context, index) {
                   return SizedBox(
-                    width: 150,
-                    height: 250,
-                    child: new Image.network(
-                      height: 250,
                       width: 150,
-                      widget.images[index].toString(),
-                    )
-                   );
-                  },
-                )
-              ),
-              /*lesthorz(
+                      height: 250,
+                      child: Image.network(
+                        height: 250,
+                        width: 150,
+                        widget.images[index].toString(),
+                      ));
+                },
+              )),
+          /*lesthorz(
                 img1: NetworkImage(
                   widget.images[0],
                 ),
@@ -66,30 +72,28 @@ class _rent1State extends State<rent1> {
                 img8: AssetImage('assest/images/felarent8.png'),
                 img9: AssetImage('assest/images/180.png'),
               ),*/
-              const Divider(
-                height: 0,
-                thickness: 3,
-                indent: 50,
-                endIndent: 50,
-                color: Colors.black,
-              ),
-              descption(
-                  texttype: "${widget.type}",
-                  textdescr: "${widget.name}",
-                  textloca: "${widget.location}",
-                  price: "${widget.price}"),
-              const Divider(
-                height: 0,
-                thickness: 3,
-                indent: 50,
-                endIndent: 50,
-                color: Colors.black,
-              ),
-              contactus(
-                  phone: '0790970072', fphone: () {}, text: 'loay', ftext: () {})
-            ],
-          )),
+          const Divider(
+            height: 0,
+            thickness: 3,
+            indent: 50,
+            endIndent: 50,
+            color: Colors.black,
+          ),
+          descption(
+              texttype: widget.type,
+              textdescr: widget.name,
+              textloca: widget.location,
+              price: widget.price),
+          const Divider(
+            height: 0,
+            thickness: 3,
+            indent: 50,
+            endIndent: 50,
+            color: Colors.black,
+          ),
+          contactus(phone: '962790970072', text: 'message')
+        ],
+      )),
     );
   }
 }
-

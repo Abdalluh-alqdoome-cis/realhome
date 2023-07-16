@@ -1,10 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firstapp/componnant/btn.dart';
+//import 'package:firstapp/componnant/btn.dart';
 import 'package:firstapp/componnant/textfild.dart';
 import 'package:flutter/material.dart';
 
 import '../../componnant/topstatic.dart';
 
+// ignore: camel_case_types
 class sigup extends StatefulWidget {
   const sigup({Key? key}) : super(key: key);
 
@@ -12,6 +13,7 @@ class sigup extends StatefulWidget {
   State<sigup> createState() => _sigupState();
 }
 
+// ignore: camel_case_types
 class _sigupState extends State<sigup> {
   // declaration form
   var formKey = GlobalKey<FormState>();
@@ -36,7 +38,7 @@ class _sigupState extends State<sigup> {
             child: Form(
       key: formKey,
       child: Container(
-        margin: EdgeInsets.only(top: 100),
+        margin: const EdgeInsets.only(top: 100),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -101,8 +103,8 @@ class _sigupState extends State<sigup> {
               maxLength: 25,
             ),
             Container(
-              margin: EdgeInsets.symmetric(vertical: 10),
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              margin: const EdgeInsets.symmetric(vertical: 10),
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
               width: size.width * 0.8,
               decoration: BoxDecoration(
                   color: maincolor, borderRadius: BorderRadius.circular(29)),
@@ -111,7 +113,7 @@ class _sigupState extends State<sigup> {
                     backgroundColor: maincolor,
                   ),
                   onPressed: () async {
-                    print(!formKey.currentState!.validate());
+                    //print(!formKey.currentState!.validate());
                     if (!formKey.currentState!.validate()) {
                       ScaffoldMessenger.of(context).showSnackBar(
                         const SnackBar(
@@ -130,15 +132,17 @@ class _sigupState extends State<sigup> {
                       };
 
                       await docType.set(jsonData);
+                      // ignore: use_build_context_synchronously
                       ScaffoldMessenger.of(context).showSnackBar(
                         const SnackBar(
                             content: Text('signup Sucessfully',
                                 textAlign: TextAlign.center)),
                       );
+                      // ignore: use_build_context_synchronously
                       Navigator.of(context).pushNamed('login');
                     }
                   },
-                  child: Text('Create an account',
+                  child: const Text('Create an account',
                       style: TextStyle(
                         color: maincolor2,
                       ))),
@@ -146,12 +150,12 @@ class _sigupState extends State<sigup> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text('already have an acount'),
+                const Text('already have an acount'),
                 GestureDetector(
                   onTap: () async {
                     Navigator.of(context).pushNamed('login');
                   },
-                  child: Text(
+                  child: const Text(
                     'login',
                     style: TextStyle(
                         color: maincolor, fontWeight: FontWeight.bold),

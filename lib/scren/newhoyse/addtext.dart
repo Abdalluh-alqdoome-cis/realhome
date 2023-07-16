@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 
+// ignore: camel_case_types
 class addtext extends StatefulWidget {
+  const addtext({super.key});
+
   @override
   State<StatefulWidget> createState() {
     return _addtextState();
   }
 }
 
+// ignore: camel_case_types
 class _addtextState extends State<addtext> {
   String text1 = '';
   String text2 = '';

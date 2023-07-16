@@ -5,6 +5,7 @@ import '../../badybage.dart/deccipbox1.dart';
 import '../../badybage.dart/lasthor.dart';
 import '../../componnant/topstatic.dart';
 
+// ignore: camel_case_types
 class rent3 extends StatelessWidget {
   const rent3({super.key});
 
@@ -21,12 +22,12 @@ class rent3 extends StatelessWidget {
           child: Column(
         children: [
           lesthorz(
-            img1: AssetImage('assest/images/partrent.png'),
-            img2: AssetImage('assest/images/partrent2.png'),
-            img3: AssetImage('assest/images/partrent3.png'),
-            img4: AssetImage('assest/images/partrent4.png'),
-            img5: AssetImage('assest/images/partrent5.png'),
-            img6: AssetImage('assest/images/partrent6.png'),
+            img1: const AssetImage('assest/images/partrent.png'),
+            img2: const AssetImage('assest/images/partrent2.png'),
+            img3: const AssetImage('assest/images/partrent3.png'),
+            img4: const AssetImage('assest/images/partrent4.png'),
+            img5: const AssetImage('assest/images/partrent5.png'),
+            img6: const AssetImage('assest/images/partrent6.png'),
             //img7: AssetImage('assest/images/180.png'),
             // img8: AssetImage('assest/images/180.png'),
 //img9: AssetImage('assest/images/180.png'),
@@ -51,8 +52,7 @@ class rent3 extends StatelessWidget {
             endIndent: 50,
             color: Colors.black,
           ),
-          contactus(
-              phone: '0790970072', fphone: () {}, text: 'loay', ftext: () {})
+          contactus(phone: '962790970072', text: 'message')
         ],
       )),
     );

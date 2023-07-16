@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
 
+// ignore: camel_case_types, must_be_immutable
 class bodymain extends StatelessWidget {
+  // ignore: prefer_typing_uninitialized_variables
   var imge;
+  // ignore: prefer_typing_uninitialized_variables
   var location;
+  // ignore: prefer_typing_uninitialized_variables
   var type;
+  // ignore: prefer_typing_uninitialized_variables
   var price;
+  // ignore: prefer_typing_uninitialized_variables
   var functn;
   bodymain({
     super.key,
@@ -18,7 +24,7 @@ class bodymain extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(8),
+      margin: const EdgeInsets.all(8),
       width: double.infinity,
       child: GestureDetector(
           onTap: functn,
@@ -30,7 +36,7 @@ class bodymain extends StatelessWidget {
               centerSlice: Rect.largest,
             ),
             Container(
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: Colors.white,
               ),
               /* boxShadow: [
@@ -45,18 +51,18 @@ class bodymain extends StatelessWidget {
                       children: [
                         Text(
                           location,
-                          style: TextStyle(),
+                          style: const TextStyle(),
                         ),
                         Text(
                           type,
-                          style: TextStyle(),
+                          style: const TextStyle(),
                         ),
                       ],
                     ),
                     Text(
                       price.toUpperCase(),
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                      style: const TextStyle(
+                          fontWeight: FontWeight.bold, fontSize: 20),
                     ),
                   ]),
             )
